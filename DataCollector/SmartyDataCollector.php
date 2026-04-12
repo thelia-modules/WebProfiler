@@ -46,7 +46,7 @@ class SmartyDataCollector extends DataCollector
         return array_reduce($this->data['templates'], function ($carry, $template) { return $carry + $template['executionTime']; }, 0);
     }
 
-    public function getName()
+    public function getName(): string
     {
         return 'smarty';
     }
