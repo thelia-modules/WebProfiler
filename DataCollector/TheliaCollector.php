@@ -15,14 +15,14 @@ namespace WebProfiler\DataCollector;
 use Symfony\Bundle\FrameworkBundle\DataCollector\AbstractDataCollector;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Thelia\Core\Thelia;
+use Thelia\Core\TheliaKernel;
 
 class TheliaCollector extends AbstractDataCollector
 {
-    public function collect(Request $request, Response $response, \Throwable $exception = null): void
+    public function collect(Request $request, Response $response, ?\Throwable $exception = null): void
     {
         $this->data = [
-            'theliaVersion' => Thelia::THELIA_VERSION,
+            'theliaVersion' => TheliaKernel::THELIA_VERSION,
         ];
     }
 
