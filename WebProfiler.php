@@ -39,8 +39,10 @@ class WebProfiler extends BaseModule
         $servicesConfigurator->load(self::getModuleCode().'\\', __DIR__)
             ->exclude(
                 [
-                    THELIA_MODULE_DIR.ucfirst(self::getModuleCode()).'/I18n/*',
-                    THELIA_MODULE_DIR.ucfirst(self::getModuleCode()).'/DataCollector/SmartyDataCollector',
+                    __DIR__.'/I18n',
+                    __DIR__.'/I18n/*',
+                    __DIR__.'/I18n/**/*',
+                    __DIR__.'/DataCollector/SmartyDataCollector',
                 ]
             )
             ->autowire(true)
