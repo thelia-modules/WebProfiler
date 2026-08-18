@@ -26,7 +26,7 @@ class SmartyDataCollector extends DataCollector
         $this->smartyParser = $smartyParser;
     }
 
-    public function collect(Request $request, Response $response, \Throwable $exception = null): void
+    public function collect(Request $request, Response $response, ?\Throwable $exception = null): void
     {
         $this->data['templates'] = $this->smartyParser->getCollectedTemplates();
     }
